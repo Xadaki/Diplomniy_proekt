@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SQL</title>
+<meta charset="utf-8">
+<style>
+   table {
+    width: 700px; 
+    border: 0px white; 
+    margin: auto;
+   }
+   td {
+    text-align: left; 
+   }
+</style>
+</head>
+<body>
+
+<table>
+<tr><td>
+
+<div class="blog-section blog-section--post-info blog-section--fullwidth">
+    <div class="blog-section__wrap">
+        <div class="blog-section__content">
+            <div class="blog-section__wrap-inner">
+                <div class="post-info post-info--fullwidth">
+                    <h1 class="post-info__title" style="text-align:center;">SQL для начинающих</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="blog-section blog-section--post-content blog-section--fullwidth">
+    <div class="blog-section__wrap">
+        <div class="blog-section__content blog-section__content--short">
+            <div class="blog-section__wrap-inner">
+                <div class="post-content post-content--fullwidth">
+                    <div class="post-highlighted-text">
+                        <p>&nbsp; &nbsp; &nbsp;Система управления базами данных (СУБД)&nbsp;— это отдельная программа, которая работает как сервер, независимо от&nbsp;PHP.</p>
+                    </div>
+                    <p>Создавать свои базы данных, таблицы и&nbsp;наполнять их&nbsp;данными можно прямо из&nbsp;этой&nbsp;же программы, но&nbsp;для выполнения этих операций прежде придётся познакомиться с&nbsp;ещё одним языком программирования&nbsp;— SQL.</p>
+                    <p>SQL или Structured Query Language (язык структурированных запросов)&nbsp;— язык программирования, предназначенный для управления данными в&nbsp;СУБД. Все современные СУБД поддерживают SQL.</p>
+                    <p>На&nbsp;языке SQL выражаются все действия, которые можно провести с&nbsp;данными: от&nbsp;записи и&nbsp;чтения данных, до&nbsp;администрирования самого сервера СУБД. Для повседневной работы совсем не&nbsp;обязательно знать весь этот язык; достаточно ознакомиться лишь с&nbsp;основными понятиями синтаксиса и&nbsp;ключевыми словами.</p>
+                    <p>Кроме того, SQL очень простой язык по&nbsp;своей структуре, поэтому его освоение не&nbsp;составит большого труда.</p>
+                    <p>Язык SQL&nbsp;— это в&nbsp;первую очередь язык запросов, а&nbsp;кроме того он&nbsp;очень похож на&nbsp;естественный язык. Каждый раз, когда требуется прочитать или записать любую информацию в&nbsp;БД, требуется составить корректный запрос. Такой запрос должен быть выражен в&nbsp;терминах SQL.</p>
+                    <p>Например, чтобы вывести на&nbsp;экран все записи из&nbsp;таблицы&nbsp;<code>города</code>, составим такой запрос:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">ПРОЧИТАТЬ всё ИЗ ТАБЛИЦЫ 'города'
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>Если перевести этот запрос на&nbsp;язык SQL, то&nbsp;корректным результатом будет:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">SELECT * FROM 'cities'
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>Теперь напишем запрос на&nbsp;добавление в&nbsp;таблицу&nbsp;<code>города</code>&nbsp;нового города:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">ВСТАВЬ В ТАБЛИЦУ 'города' ЗНАЧЕНИЯ 'имя города' = 'Санкт-Петербург'
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>Перевод на&nbsp;SQL:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">INSERT INTO 'cities' SET 'name' = 'Санкт-Петербург'
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>Эта команда создаст в&nbsp;таблице <code>города</code> новую запись, где полю <code>имя города</code> будет присвоено значение <code>Санкт-Петербург</code>.</p>
+                    <p>С&nbsp;помощью SQL можно не&nbsp;только добавлять и&nbsp;читать данные, но&nbsp;и:</p>
+                    <ul>
+                        <li>удалять и&nbsp;обновлять записи в&nbsp;таблицах;</li>
+                        <li>создавать и&nbsp;редактировать сами таблицы;</li>
+                        <li>производить операции над данными: считать сумму, получать самое большое или малое значение, и&nbsp;так далее;</li>
+                        <li>настраивать работу сервера СУБД.</li>
+                    </ul>
+                    <h2 style="text-align:center;">MySQL</h2>
+                    <p>Существует множество различных реляционных СУБД. Самая известная СУБД&nbsp;— это Microsoft Access, входящая в&nbsp;состав офисного пакета приложений Microsoft Office. Нет никаких препятствий для использования в&nbsp;качестве СУБД MS&nbsp;Access, но&nbsp;для задач веб-программирования гораздо лучше подходит альтернативная программа&nbsp;— MySQL.</p>
+                    <p>В&nbsp;отличие от&nbsp;MS&nbsp;Access, MySQL абсолютно бесплатна, может работать на&nbsp;серверах с&nbsp;Linux, обладает гораздо большей производительностью и&nbsp;безопасностью, что делает её&nbsp;идеальным кандидатом на&nbsp;роль базы данных в&nbsp;веб-разработке.</p>
+                    <p>Подавляющее большинство сайтов и&nbsp;приложений на&nbsp;PHP используют в&nbsp;качестве СУБД именно MySQL.</p>
+                    <h2 style="text-align:center;"><strong>Установка</strong></h2>
+                    <p>Последняя версия MySQL доступна для загрузки по&nbsp;ссылке: <a target="_blank" rel="noopener noreferrer" href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a>. На&nbsp;этой странице следует выбрать <i>MySQL Installer for Windows</i> и&nbsp;нажать на&nbsp;кнопку <i>Download</i> для загрузки.</p>
+                    <p>В&nbsp;процессе установки запомните директорию, куда вы&nbsp;устанавливаете MySQL (скрывается под ссылкой <i>Advanced options</i>). На&nbsp;шаге <i>Accounts and Roles</i> установщик попросит придумать пароль для доступа к&nbsp;БД&nbsp;(MySQL Root Password)&nbsp;— обязательно запомните или запишите этот пароль&nbsp;— он&nbsp;вам ещё понадобится.</p>
+                    <p>Если для своей работы вы&nbsp;используете программную среду OpenServer, то&nbsp;этот раздел можно смело пропустить, так как&nbsp;в&nbsp;состав OpenServer уже входит свежая версия MySQL.</p>
+                    <h2 style="text-align:center;"><strong>Выполнение запросов</strong></h2>
+                    <p>По&nbsp;умолчанию, если вы&nbsp;не&nbsp;устанавливали дополнительные программы, у&nbsp;MySQL нет графического интерфейса пользователя. Это значит, что единственный способ работы с&nbsp;ней&nbsp;— это использование командной строки.</p>
+                    <ol>
+                        <li>Откройте командную строку (Выполнить&nbsp;— <code>cmd.exe</code>).</li>
+                        <li>Перейдите в&nbsp;каталог с&nbsp;установленной MySQL:&nbsp;<code>cd /d &lt;каталог установки&gt;/bin</code>.</li>
+                        <li>Выполните:&nbsp;<code>mysql -uroot -p</code>.</li>
+                        <li>Введите пароль, заданный при установке.</li>
+                    </ol>
+                    <p>Если вы&nbsp;всё выполнили верно, то&nbsp;в&nbsp;командной строке запустится клиент для работы с&nbsp;MySQL (вы&nbsp;поймете это по&nbsp;строке приглашения «mysql&gt;»). С&nbsp;этого момента можно вводить любые SQL запросы, но&nbsp;каждый запрос обязательно должен заканчиваться точкой с&nbsp;запятой <code>;</code>.</p>
+                    <h2 style="text-align:center;"><strong>Оператор SQL create database: создание новой базы данных</strong></h2>
+                    <p>Приступим к&nbsp;практике&nbsp;— начнём создавать базу данных для ведения погодного дневника.</p>
+                    <p>Начать следует с&nbsp;создания новой базы данных для нашего сайта. Новая БД&nbsp;в&nbsp;MySQL создаётся простой командой:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">CREATE DATABASE &lt;имя базы данных&gt;
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>После этого MySQL создаст для нас новую&nbsp;БД, в&nbsp;которой будет происходить вся дальнейшая работа. Это важно: после создания&nbsp;БД&nbsp;её&nbsp;невозможно будет переименовать, а&nbsp;только удалить и&nbsp;создать заново. По&nbsp;этой причине крайне внимательно подойдите к&nbsp;выбору имени для базы данных.</p>
+                    <h2 style="text-align:center;"><strong>create table</strong></h2>
+                    <p><strong>Зачем нужен:создание таблиц</strong></p>
+                    <p>Создав новую&nbsp;БД, сообщим MySQL, что теперь мы&nbsp;собираемся работать именно с&nbsp;ней. Выбор активной&nbsp;БД&nbsp;выполняется командой:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">USE &lt;имя базы&gt;;
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>Пришло время создать первые таблицы! Для ведения дневника по&nbsp;всем правилам, понадобится создать три таблицы: города (<code>cities</code>), пользователи (<code>users</code>) и&nbsp;записи о&nbsp;погоде <code>weather_log</code>. В&nbsp;подразделе «Запись» этой главы описано, как должна выглядеть структура таблицы <code>weather_log</code>. Переведём это описание на&nbsp;язык SQL:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">CREATE TABLE weather_log (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  city_id INT,
+  day DATE,
+  temperature INT,
+  cloud TINYINT DEFAULT 0
+);
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>Чтобы ввести многострочную команду в&nbsp;командной строке используйте символ&nbsp;<code>\</code>&nbsp;в&nbsp;конце каждой строки, кроме последней.</p>
+                    <p>Теперь создадим таблицу городов:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">CREATE TABLE cities (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name CHAR(128)
+)
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>MySQL может показать созданную таблицу, если попросить об&nbsp;этом командой:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">SHOW COLUMNS FROM weather_log
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>В&nbsp;ответе будут перечислены все поля таблицы, их&nbsp;тип и&nbsp;другие характеристики.</p>
+                    <h2 style="text-align:center;">Что такое п<strong>ервичный ключ</strong></h2>
+                    <p>В&nbsp;примере с&nbsp;созданием новой таблицы при перечислении необходимых полей первым полем идёт&nbsp;<code>id INT AUTO_INCREMENT PRIMARY KEY</code>. Это поле называется первичным ключом. Обязательно создавать первичный ключ в&nbsp;каждой таблице.</p>
+                    <div class="post-highlighted-text">
+                        <p>&nbsp; &nbsp; &nbsp;Первичный ключ&nbsp;— это особенное поле, в&nbsp;котором сохраняется уникальный идентификатор записи.</p>
+                    </div>
+                    <p>Первичный ключ&nbsp;нужен, чтобы у&nbsp;программиста и&nbsp;базы данных всегда была возможность однозначно обратиться к&nbsp;одной конкретной записи для её&nbsp;чтения, обновления или удаления. Если назначить поле первичным ключом, то&nbsp;БД&nbsp;будет следить за&nbsp;тем, чтобы значение в&nbsp;этом поле больше не&nbsp;повторялось в&nbsp;таблице.</p>
+                    <p>А&nbsp;если ещё и&nbsp;добавить аттрибут&nbsp;<code>AUTO_INCREMENT</code>, то&nbsp;MySQL при добавлении новых записей будет заполнять это поле сама.&nbsp;<code>AUTO_INCREMENT</code>&nbsp;будет играть роль счётчика&nbsp;— каждая новая запись в&nbsp;таблице получит значение на&nbsp;единицу больше максимального существующего значения.</p>
+                    <h2 style="text-align:center;"><strong>insert into</strong></h2>
+                    <p>Зачем нужен: <strong>добавление записи в&nbsp;таблицу</strong></p>
+                    <p>Начнём с&nbsp;добавления новых данных в&nbsp;таблицу. Для добавления записи используется следующий синтаксис:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">insert into &lt;название таблицы&gt; set &lt;имя столбца1&gt; = &lt;значение2&gt;, &lt;имя столбца2&gt; = &lt;значение2&gt;...
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>В&nbsp;начале добавим город в&nbsp;таблицу городов:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">insert into cities set name = 'Санкт-Петербург'
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>При добавлении записи необязательно указывать значения для всех полей. Многие из&nbsp;полей имеют значения по&nbsp;умолчанию, которые сами заполняются при сохранении.</p>
+                    <p>Теперь создадим запись о&nbsp;погоде за&nbsp;сегодня.</p>
+                    <p>При определении таблицы weather_log мы&nbsp;решили ссылаться на&nbsp;город, путём записи в&nbsp;поле city_id идентификатора города из&nbsp;таблицы cities. Так как&nbsp;мы&nbsp;только что добавили новый город, ничего не&nbsp;мешает использовать его идентификатор в&nbsp;записи о&nbsp;погоде.</p>
+                    <p>Идентификатором города будет первичный ключ, который также был определён в&nbsp;качестве первого поля таблицы. Нумерация этого поля начинается с&nbsp;единицы, значит первая добавленная запись имеет идентификатор&nbsp;<code>1</code>. Зная это, запрос на&nbsp;добавление записи о&nbsp;погоде в&nbsp;Санкт-Петербурге за&nbsp;третье сентября 2017 года выглядит так:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">INSERT INTO weather_log SET city_id = 1, day = '2017-09-03', temperature = 5, cloud = 1;
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <h2 style="text-align:center;"><strong>select. Чтение информации из&nbsp;БД</strong></h2>
+                    <p>Для вывода информации из&nbsp;БД&nbsp;используются запросы типа&nbsp;<code>SELECT</code>.</p>
+                    <p>В&nbsp;запросе нужно указать имя таблицы, необходимые поля, а&nbsp;также дополнительные параметры (будут рассмотрены в&nbsp;следующем уроке).</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">SELECT &lt;перечисление полей&gt; FROM &lt;имя таблицы&gt;
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>Например, чтобы получить список всех доступных городов:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">SELECT id, name FROM cities
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>Все погодные записи:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="sql language-sql"><code class="language-plaintext hljs language-sql" data-highlighted="yes">SELECT id, day, city_id, temperature, cloud FROM weather_log
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>Вместо перечисления всех столбцов можно использовать знак звездочки&nbsp;—&nbsp;<code>*</code>.</p>
+                    <h2 style="text-align:center;"><strong>Оператор update: обновление информации в&nbsp;БД</strong></h2>
+                    <p>При добавлении записи очень легко совершить ошибку: сделать опечатку, не&nbsp;указать значение для одного из&nbsp;полей, и&nbsp;так далее. Естественно, язык SQL предлагает возможности для редактирования уже созданных записей.</p>
+                    <p>Предположим, что при добавлении погодной записи пользователь ошибся и&nbsp;ввёл неверную дату. Чтобы исправить эту ошибку, нужно использовать оператор обновления&nbsp;—&nbsp;<code>UPDATE</code>. Запрос с&nbsp;этим оператором позволяет обновить значение одного или нескольких полей в&nbsp;существующей записи. Выглядит он&nbsp;так:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="text language-text"><code class="language-plaintext hljs" data-highlighted="yes">UPDATE &lt;имя таблицы&gt; SET &lt;имя столбца1&gt; = &lt;значение2&gt;, &lt;имя столбца2&gt; = &lt;значение2&gt;... WHERE &lt;имя столбца&gt; = &lt;значение&gt;
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>Но&nbsp;чтобы правильно составить запрос, необходимо определить условие для поиска записи, которую предлагается обновить. В&nbsp;противном случае, если не&nbsp;указать это условие, то&nbsp;будут обновлены абсолютно все записи в&nbsp;таблице.</p>
+                    <p>В&nbsp;качестве такого условия лучше всего использовать первичный идентификатор записи. Поэтому, прежде чем выполнять запрос обновления, нужно выполнить запрос на&nbsp;чтение информации из&nbsp;таблицы, чтобы узнать, под каким идентификатором сохранилась ошибочная запись. Допустим, этот идентификатор&nbsp;— единица, а&nbsp;правильная дата&nbsp;— седьмое декабря 2022&nbsp;года.</p>
+                    <p>Запрос на&nbsp;обновление:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="text language-text"><code class="language-plaintext hljs" data-highlighted="yes">UPDATE weather_log SET day = '2022-12-07' WHERE id = 1
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <h2 style="text-align:center;"><strong>Оператор join: объединение записей из&nbsp;двух таблиц</strong></h2>
+                    <p>В&nbsp;нашей таблице для хранения погодного дневника город сохраняется как идентификатор, поэтому при обычном чтении данных из&nbsp;этой таблицы вместо названия города стоит непонятное число. Чтобы подставить на&nbsp;место числа действительное значение, а&nbsp;конкретнее&nbsp;— название города, в&nbsp;SQL существуют операторы объединения&nbsp;—&nbsp;<code>JOIN</code>. Поддержка операторов объединения и&nbsp;позволяет базе данных называться&nbsp;<i>реляционной</i>.</p>
+                    <p>Поменяем запрос на&nbsp;показ погодных записей, чтобы он&nbsp;объединял две таблицы, а&nbsp;в&nbsp;поле города показывалось его название, а&nbsp;не&nbsp;идентификатор:</p>
+                    <table style="background-color:hsl( 54, 100%, 94% );border:0px solid hsl(0, 0%, 100%);">
+        <tbody>
+            <tr>
+                <td>
+                    <pre class="text language-text"><code class="language-plaintext hljs" data-highlighted="yes">SELECT day, cities.name, temperature, cloud FROM weather_log JOIN cities ON weather_log.city_id = cities.id
+</code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+                    <p>Важно усвоить три самых главных момента:</p>
+                    <ol>
+                        <li>При чтении из&nbsp;объединённых таблиц, в&nbsp;перечислении полей после SELECT нужно явно указывать в&nbsp;поле имени также имя таблицы, с&nbsp;которой производится объединение.</li>
+                        <li>Всегда есть основная таблица (тб1), из&nbsp;которой читается большинство полей, и&nbsp;присоединяемая (тб2), имя которой определяется после оператора JOIN.</li>
+                        <li>Помимо указания имени второй таблицы, обязательно следует указать условие, по&nbsp;которому будет происходить объединение. В&nbsp;этом примере таким условием будет соответствие идентификатора города из&nbsp;тб1 (<code>weather_log.city_id</code>) первичному ключу города из&nbsp;тб2 (<code>cities.id</code>).</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</tr></td>
+</table>
+<br></br>
+<br></br>
+<br></br>
+<div align="center">
+<a href="database.html">Предыдущий раздел</a>| <a href="index.html">На главную</a> | <a href="mysql-php.html">Следующий раздел</a>
+</div>
+<br></br>
+</body>
